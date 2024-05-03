@@ -4,13 +4,11 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This repository contains a sample Flutter application built using the GetX state management library. 
+The purpose of this project is to provide a practical demonstration of basic GetX usage, serving as a learning resource for developers who are new to the library.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Features:
+- Simple UI with navigation.
+- Basic state management using GetX controllers.
+- Implementation of GetX routes for navigation.
+- Integration of GetX dependencies for efficient state management.

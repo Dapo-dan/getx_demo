@@ -8,4 +8,5 @@ class ImagePath {
   static const String doctor1 = "${imagePath}doctor1$extensionPath";
   static const String doctor2 = "${imagePath}doctor2$extensionPath";
   static const String doctor3 = "${imagePath}doctor3$extensionPath";
+  static const String bgTexture = "${imagePath}bgTexture$extensionPath";
 }

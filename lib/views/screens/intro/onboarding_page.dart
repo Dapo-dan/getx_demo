@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/shared/helpers/ui_helpers.dart';
@@ -19,9 +20,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
   int _currentPage = 0;
 
   List<String> pageTexts = [
-    'Book an appointment with doctor. Chat with doctor via appointment letter and get consultationt.',
-    'Book an appointment with doctor. Chat with doctor via appointment letter and get consultationt.',
-    'Book an appointment with doctor. Chat with doctor via appointment letter and get consultationt.',
+    'Book an appointment with doctor. Chat with doctor via appointment letter and get consultation.',
+    'Plan your wellness journey with us. Experience hassle-free consultations and personalized guidance.',
+    'Unlock access to premium healthcare. Seamlessly connect with our team for top-notch medical advice and support.',
   ];
 
   @override
@@ -94,8 +95,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Text(
+                    'More Comfortable Chat With the Doctor',
+                    style: TextStyles.bold.copyWith(
+                      fontSize: 30,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                   SizedBox(
-                    height: screenHeight(context) * 0.22,
+                    height: screenHeight(context) * 0.11,
                     child: PageView.builder(
                       controller: _pageController,
                       itemCount: pageTexts.length,
@@ -108,20 +116,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'More Comfortable Chat With the Doctor',
-                              style: TextStyles.bold.copyWith(
-                                fontSize: 30,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              pageTexts[index],
-                              style: TextStyles.medium.copyWith(
-                                fontSize: 17,
-                                color: AppColors.text,
-                              ),
-                              textAlign: TextAlign.center,
+                            AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  pageTexts[index],
+                                  textStyle: const TextStyle(
+                                    fontSize: 17.0,
+                                    color: AppColors.text,
+                                  ),
+                                  speed: const Duration(milliseconds: 50),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                              repeatForever: false,
+                              totalRepeatCount: 1,
+                              pause: const Duration(milliseconds: 20),
                             ),
                           ],
                         );

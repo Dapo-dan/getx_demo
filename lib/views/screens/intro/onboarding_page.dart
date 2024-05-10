@@ -5,7 +5,7 @@ import 'package:getxdemo/shared/helpers/ui_helpers.dart';
 import 'package:getxdemo/shared/theme/app_colors.dart';
 import 'package:getxdemo/shared/theme/text_styles.dart';
 import 'package:getxdemo/shared/utils/image_path.dart';
-import 'package:getxdemo/views/screens/splash_screen.dart';
+import 'package:getxdemo/views/screens/auth/signup_page.dart';
 import 'package:getxdemo/views/widgets/buttons/app_button.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -153,7 +153,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               curve: Curves.ease,
                             );
                           }
-                        : () => Get.to(const SplashScreen()),
+                        : () => Get.to(const SignUpPage()),
                     buttonText: _currentPage < 2 ? 'Next' : 'Get Started',
                     buttonTextColor: AppColors.white,
                   )

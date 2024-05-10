@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getxdemo/shared/theme/app_colors.dart';
 
 class TextStyles {
   static TextStyle bold = const TextStyle(
@@ -19,5 +20,6 @@ class TextStyles {
   static TextStyle regular = const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
+    color: AppColors.text,
   );
 }

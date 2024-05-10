@@ -1,5 +1,5 @@
 class IconPath {
-  static const String iconPath = "assets/svg/";
+  static const String iconPath = "assets/icons/";
   static const String extensionPath = ".svg";
 
   static const String calendar = "${iconPath}calendar$extensionPath";
@@ -11,4 +11,8 @@ class IconPath {
   static const String patients = "${iconPath}patients$extensionPath";
   static const String profile = "${iconPath}profile$extensionPath";
   static const String star = "${iconPath}star$extensionPath";
+
+  static const String google = "${iconPath}google$extensionPath";
+  static const String facebook = "${iconPath}facebook$extensionPath";
+  static const String twitter = "${iconPath}twitter$extensionPath";
 }

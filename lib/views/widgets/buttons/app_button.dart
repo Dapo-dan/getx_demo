@@ -45,8 +45,8 @@ class AppButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
-        fixedSize: Size(
-            buttonWidth ?? screenWidth(context), buttonHeight ?? 48),
+        fixedSize:
+            Size(buttonWidth ?? screenWidth(context), buttonHeight ?? 48),
       ),
       onPressed: onTap,
       child: Visibility(
@@ -54,7 +54,7 @@ class AppButton extends StatelessWidget {
         replacement: Text(
           buttonText,
           style: TextStyles.medium.copyWith(
-            color: isLightMode ? AppColors.white : buttonTextColor,
+            color: buttonTextColor ?? AppColors.white,
           ),
         ),
         child: const Padding(

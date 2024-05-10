@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getxdemo/shared/theme/app_colors.dart';
+import 'package:getxdemo/shared/theme/text_styles.dart';
 
 enum InputFieldType { normal, password, email, name }
 
@@ -18,7 +19,7 @@ class AppTextField extends StatefulWidget {
     this.isFilled,
     this.horizontalPadding = 20,
     this.borderRadius = 8,
-    this.verticalPadding = 16,
+    this.verticalPadding = 8,
     this.maxLength,
     this.maxLines,
     this.onChanged,
@@ -78,7 +79,6 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
 
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -108,7 +108,7 @@ class _AppTextFieldState extends State<AppTextField> {
           semanticCounterText: widget.hintText,
           fillColor: AppColors.colorF7F7FF,
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           // prefixIcon: widget.prefixIconPath != ""
           //     ? Padding(
           //         padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -141,7 +141,9 @@ class _AppTextFieldState extends State<AppTextField> {
                       ),
                     )
                   : const SizedBox()),
-          hintStyle: textTheme.labelSmall,
+          hintStyle: TextStyles.regular.copyWith(
+            color: AppColors.hint,
+          ),
           hintText: widget.hintText,
           filled: true,
           errorText: widget.inputErrorOccur
@@ -151,31 +153,31 @@ class _AppTextFieldState extends State<AppTextField> {
             borderRadius: BorderRadius.circular(widget.borderRadius),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(widget.borderRadius),
             borderSide: BorderSide(
               color: colorScheme.primaryContainer,
-              width: 1,
+              width: 0,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(widget.borderRadius),
             borderSide: const BorderSide(
               color: Colors.red,
               width: 1,
             ),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(widget.borderRadius),
             borderSide: const BorderSide(
               color: Colors.red,
               width: 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(widget.borderRadius),
             borderSide: BorderSide(
               color: colorScheme.primaryContainer,
-              width: 1,
+              width: 0,
             ),
           ),
         ),

@@ -166,12 +166,15 @@ class SignUpPage extends StatelessWidget {
                     },
                   ),
                   verticalSpaceLarge,
-                  AppButton(
-                    onTap: () {
-                      controller.onSignUp();
-                    },
-                    buttonText: 'Sign Up',
-                  )
+                  Obx(
+                    () => AppButton(
+                      isLoading: controller.status.isLoading,
+                      onTap: () {
+                        controller.onSignUp();
+                      },
+                      buttonText: 'Sign Up',
+                    ),
+                  ),
                 ],
               ),
             ),

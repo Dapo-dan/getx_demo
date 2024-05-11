@@ -99,8 +99,10 @@ class SignUpController extends GetxController {
   Future<void> onSignUp() async {
     if (formKey.currentState!.validate()) {
       _status.value = RxStatus.loading();
+
+      // to show loader
+      await Future.delayed(const Duration(seconds: 5));
       try {
-        //Perform login logic here
         Get.snackbar(
           "Login Successful",
           "Display the message here",

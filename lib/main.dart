@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxdemo/controllers/auth/signup_controller.dart';
 import 'package:getxdemo/views/screens/splash_screen.dart';
 
 void main() {
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      defaultTransition: Transition.fadeIn,
+            onInit: () {
+              Get.put(SignUpController());
+            },
       home: const SplashScreen(),
     );
   }

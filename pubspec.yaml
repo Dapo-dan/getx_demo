@@ -12,9 +12,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  get: ^4.6.6
-  animated_text_kit: ^4.2.2
-  flutter_svg: ^2.0.10+1
+  get: 
+  animated_text_kit: 
+  flutter_svg: 
+  awesome_snackbar_content: 
+  email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:

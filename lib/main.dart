@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       defaultTransition: Transition.fadeIn,
-            onInit: () {
-              Get.put(SignUpController());
-            },
+      onInit: () {
+        Get.put(SignUpController());
+      },
       home: const SplashScreen(),
     );
   }

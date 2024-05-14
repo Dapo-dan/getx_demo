@@ -2,13 +2,9 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpController extends GetxController {
+class LoginController extends GetxController {
   final emailTC = TextEditingController();
-  final phoneTC = TextEditingController();
-  final firstNameTC = TextEditingController();
-  final lastNameTC = TextEditingController();
   final passwordTC = TextEditingController();
-  final confirmpassTC = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   final _status = Rx<RxStatus>(RxStatus.empty());
@@ -17,19 +13,12 @@ class SignUpController extends GetxController {
 
 // Input validatorLogic
   bool isValidEmail = true;
-  bool isValidFname = true;
-  bool isValidLName = true;
   bool isValidPassword = true;
-  bool isValidCPassword = true;
 
   @override
   void onClose() {
     emailTC.dispose();
-    phoneTC.dispose();
-    firstNameTC.dispose();
-    lastNameTC.dispose();
     passwordTC.dispose();
-    confirmpassTC.dispose();
   }
 
   String? validateEmail(String? val) {
@@ -41,32 +30,6 @@ class SignUpController extends GetxController {
       return "Email address is not valid";
     } else {
       isValidEmail = true;
-      return null;
-    }
-  }
-
-  String? validateFirstName(String? val) {
-    if (val!.isEmpty) {
-      isValidFname = false;
-      return "First name is required";
-    } else if (val.length < 3) {
-      isValidFname = false;
-      return "First name short";
-    } else {
-      isValidFname = true;
-      return null;
-    }
-  }
-
-  String? validateLastName(String? val) {
-    if (val!.isEmpty) {
-      isValidLName = false;
-      return "Last name is required";
-    } else if (val.length < 3) {
-      isValidLName = false;
-      return "Last name short";
-    } else {
-      isValidLName = true;
       return null;
     }
   }
@@ -86,17 +49,8 @@ class SignUpController extends GetxController {
     }
   }
 
-  String? validateCPassword(String? val) {
-    if (val != passwordTC.text) {
-      isValidCPassword = false;
-      return "Passwords do not match";
-    } else {
-      isValidCPassword = true;
-      return null;
-    }
-  }
 
-  Future<void> onSignUp() async {
+  Future<void> onLogin() async {
     if (formKey.currentState!.validate()) {
       _status.value = RxStatus.loading();
 
@@ -104,7 +58,7 @@ class SignUpController extends GetxController {
       await Future.delayed(const Duration(seconds: 5));
       try {
         Get.snackbar(
-          "Sign up Successful",
+          "Login Successful",
           "Display the message here",
           colorText: Colors.black,
           backgroundColor: Colors.green,

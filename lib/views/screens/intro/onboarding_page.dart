@@ -153,7 +153,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               curve: Curves.ease,
                             );
                           }
-                        : () => Get.to(() => const SignUpPage()),
+                        : () => Get.to(() => SignUpPage()),
                     buttonText: _currentPage < 2 ? 'Next' : 'Get Started',
                     buttonTextColor: AppColors.white,
                   )

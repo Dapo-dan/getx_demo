@@ -5,6 +5,7 @@ import 'package:getxdemo/shared/helpers/ui_helpers.dart';
 import 'package:getxdemo/shared/theme/app_colors.dart';
 import 'package:getxdemo/shared/theme/text_styles.dart';
 import 'package:getxdemo/shared/utils/icon_path.dart';
+import 'package:getxdemo/views/screens/auth/signup_page.dart';
 import 'package:getxdemo/views/widgets/buttons/app_button.dart';
 import 'package:getxdemo/views/widgets/buttons/social_button.dart';
 import 'package:getxdemo/views/widgets/divide_with_text.dart';
@@ -109,6 +110,29 @@ class LoginPage extends StatelessWidget {
                     },
                     buttonText: 'Login',
                   ),
+                ),
+                verticalSpaceSmall,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: TextStyles.regular.copyWith(
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    TextButton(
+                      onPressed: () => Get.to(() => SignUpPage()),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyles.regular.copyWith(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

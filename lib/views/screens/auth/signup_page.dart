@@ -5,6 +5,7 @@ import 'package:getxdemo/shared/helpers/ui_helpers.dart';
 import 'package:getxdemo/shared/theme/app_colors.dart';
 import 'package:getxdemo/shared/theme/text_styles.dart';
 import 'package:getxdemo/shared/utils/icon_path.dart';
+import 'package:getxdemo/views/screens/auth/login_page.dart';
 import 'package:getxdemo/views/widgets/buttons/app_button.dart';
 import 'package:getxdemo/views/widgets/buttons/social_button.dart';
 import 'package:getxdemo/views/widgets/divide_with_text.dart';
@@ -165,7 +166,7 @@ class SignUpPage extends StatelessWidget {
                     return controller.validateCPassword(val);
                   },
                 ),
-                verticalSpaceLarge,
+                verticalSpaceMedium,
                 Obx(
                   () => AppButton(
                     isLoading: controller.status.isLoading,
@@ -174,6 +175,29 @@ class SignUpPage extends StatelessWidget {
                     },
                     buttonText: 'Sign Up',
                   ),
+                ),
+                verticalSpaceSmall,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account?',
+                      style: TextStyles.regular.copyWith(
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    TextButton(
+                      onPressed: () => Get.to(() => LoginPage()),
+                      child: Text(
+                        'Login',
+                        style: TextStyles.regular.copyWith(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
